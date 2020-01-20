@@ -1,0 +1,187 @@
+/*@import url('https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade&display=swap');*/
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Teko:700&display=swap');
+
+
+
+body {
+    /*background-color: black;*/
+    overflow: hidden;
+    color: #fefffd;
+    /*font-family: 'Bungee', cursive;*/
+    font-family: 'Teko', sans-serif;
+    /*font-family: 'Bungee Shade', cursive;*/
+    /*background-image: url("https://image.freepik.com/free-vector/neon-grid-background_53876-91657.jpg");*/
+    background-image: url("https://wallpaperaccess.com/full/655045.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-shadow: 0 0 10px #00fffb, 0 0 20px #fff, 0 0 30px #a5438f, 0 0 40px #a5438f, 0 0 50px #a5438f, 0 0 60px #a5438f, 0 0 70px #a5438f;
+}
+
+.game-area {
+  background-image: url("https://image.freepik.com/free-vector/neon-grid-background_53876-91657.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+    position: relative;
+    margin: auto;
+    width: 650px;
+    height: 650px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00e6ed, 0 0 40px #00ed16;
+}
+
+.title {
+    text-align: center;
+    position: relative;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.GameIndex {
+    position: fixed;
+    padding-left: 10%;
+}
+
+.block {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+}
+
+.snake {
+    border-radius: 4px;
+    z-index: 2;
+    background-color: yellow;
+    box-shadow: 0 0 20px orange;
+}
+
+.food {
+    background-image: url("https://image.flaticon.com/icons/png/512/771/771266.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    z-index: 1;
+    box-shadow: 0 0 20px #ed5b00;
+    width: 15px;
+    height: 15px;
+}
+
+.boost {
+    background-image: url("https://image.flaticon.com/icons/png/512/1069/1069280.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 0 10px #0800ed;
+    width: 15px;
+    height: 15px;
+}
+.angel {
+    background-image: url("https://image.flaticon.com/icons/png/512/2327/2327312.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 0 10px #e2e1ff,0 0 10px #33ff00, 0 0 20px #fff, 0 0 10px #ff4200, 0 0 40px #0200a5;;
+    width: 15px;
+    height: 15px;
+}
+
+.wall {
+    background-image: url("https://image.flaticon.com/icons/svg/359/359399.svg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px lightblue;
+    z-index: 1;
+}
+
+.Score {
+    position: absolute;
+
+}
+
+p{
+font-size: x-large;
+    text-shadow: 0 0 10px #00fffb, 0 0 20px #fff, 0 0 10px #9a98a5, 0 0 40px #0200a5;
+}
+
+.UI {
+    font-size: 40px;
+    margin-right: 20px;
+}
+
+.Info {
+    font-size: x-large;
+    z-index: 0;
+    text-align: center;
+    padding-left: 5%;
+    padding-top: 30%;
+}
+.Timer {
+    text-align: center;
+    position: relative;
+    top: 60px;
+    left: 90%;
+    font-size: 50px;
+}
+
+.GameTitle {
+    font-size: 50px;
+    margin: auto;
+    color: #ffffff;
+    text-shadow: 0 0 10px #00e6ed, 0 0 20px #fff, 0 0 30px #00ed16, 0 0 30px #00ed16, 0 0 30px #00ed16, 0 0 30px #00ed16;
+
+}
+
+.IndexTitle {
+    padding-top: 60px;
+    padding-left: 0px;
+    font-size: 50px;
+    color: #ffffff;
+}
+.space{
+    margin-top: 30px;
+
+}
+
+.guideicon{
+    padding-right: 3px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+}
