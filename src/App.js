@@ -5,12 +5,16 @@ import Wall from "./Wall";
 import Boost from "./Boost";
 import Angel from "./Angel";
 
-let high = 0;
+
+
+
+let high = localStorage.getItem('high');
 let timer = "God Mode Timer";
 let status = "Let's Play";
 let level = 0;
 let godmode = 0;
 let currentspeed = "";
+
 
 
 const getRandomCoordinates = () => {
@@ -71,7 +75,6 @@ class App extends Component {
         this.checkIfEat();
         this.checkIfHit();
         this.speed();
-        this.directionCheck();
     }
 
 
@@ -81,47 +84,57 @@ class App extends Component {
 
     onKeyDown = e => {
         e = e || window.event;
-        switch (e.keyCode) {
-            case 38:
-                this.setState({direction: "UP"});
-                break;
-            case 40:
-                this.setState({direction: "DOWN"});
-                break;
-            case 37:
-                this.setState({direction: "LEFT"});
-                break;
-            case 39:
-                this.setState({direction: "RIGHT"});
-                break;
-            case 80:
-                this.setState({speed: 10});
-                break;
-            default:
-                break;
+
+
+
+
+
+
+
+
+        /* KEY LEFT */
+        if (e.keyCode === 37 && this.state.direction !== "RIGHT"){
+
+            this.setState({direction: "LEFT"});
         }
+        /* KEY RIGHT */
+        else if (e.keyCode === 39 && this.state.direction !== "LEFT"){
+            this.setState({direction: "RIGHT"});
+        }
+        /* KEY UP */
+        else if (e.keyCode === 38 && this.state.direction !== "DOWN"){
+            this.setState({direction: "UP"});
+        }
+        /* KEY DOWN */
+        else if (e.keyCode === 40 && this.state.direction !== "UP"){
+            this.setState({direction: "DOWN"});
+        }
+
     };
 
     moveSnake = () => {
         let block = [...this.state.snakeBlocks];
         let head = block[block.length - 1];
 
-        switch (this.state.direction) {
-            case "RIGHT":
-                head = [head[0] + 2, head[1]];
-                break;
-            case "LEFT":
-                head = [head[0] - 2, head[1]];
-                break;
-            case "DOWN":
-                head = [head[0], head[1] + 2];
-                break;
-            case "UP":
-                head = [head[0], head[1] - 2];
-                break;
-            default:
-                break;
-        }
+            switch (this.state.direction) {
+                case "RIGHT":
+                    head = [head[0] + 2, head[1]];
+                    break;
+                case "LEFT":
+                    head = [head[0] - 2, head[1]];
+                    break;
+                case "DOWN":
+                    head = [head[0], head[1] + 2];
+                    break;
+                case "UP":
+                    head = [head[0], head[1] - 2];
+                    break;
+                default:
+                    break;
+            }
+
+
+
         block.push(head);
         block.shift();
         this.setState({
@@ -129,17 +142,6 @@ class App extends Component {
         });
     };
 
-
-    directionCheck() {
-        let ups = this.state.direction ==="DOWN";
-        if (this.state.direction === "UP"){
-            ups = "";
-
-
-            console.log("fuuuuuuuuuu")
-        }
-
-    }
 
 
 
@@ -306,6 +308,7 @@ class App extends Component {
         newCoor.speed = this.boostUp();
         this.setState(newCoor);
         this.speed();
+
     }
 
     wallHit(){
@@ -352,7 +355,7 @@ class App extends Component {
     onGameOver() {
         //alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
         if (high < this.state.score){
-            high = this.state.score;
+            localStorage.setItem('high', this.state.score);
         }
         timer = "God Mode Timer";
         godmode = 0;
@@ -361,7 +364,11 @@ class App extends Component {
         setTimeout(()=>{status = "Lets try that again?"; },2000);
         setTimeout(()=>{status = ""; },3000);
         this.setState(initialState);
+        this.setState({speed: 30000});
+        // eslint-disable-next-line no-restricted-globals
+        setTimeout(()=>location.reload(),3000);
     }
+
 
 
     render() {
