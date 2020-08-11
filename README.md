@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DEMO DEPLOYED ON HEROKU:
+Link: https://react-snake-project.herokuapp.com/
 
 ## Available Scripts
 
